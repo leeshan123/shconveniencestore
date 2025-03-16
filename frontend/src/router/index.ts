@@ -11,13 +11,25 @@ const routes = [
     path: '/signup',
     name: 'signup',
 
-    component: () => import('@/views/user/Signup.vue'),
+    component: () => import('@/views/user/SignupView.vue'),
   },
   {
     path: '/signin',
     name: 'signin',
 
-    component: () => import('@/views/user/Signin.vue'),
+    component: () => import('@/views/user/SigninView.vue'),
+  },
+  {
+    path: '/find-id',
+    name: 'findId',
+
+    component: () => import('@/views/user/FindIdView.vue'),
+  },
+  {
+    path: '/find-pw',
+    name: 'findPw',
+
+    component: () => import('@/views/user/FindPwView.vue'),
   },
 ];
 
