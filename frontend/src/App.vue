@@ -1,9 +1,11 @@
 <template>
-  <TheMain />
+    <div>
+        <RouterView />
+    </div>
 </template>
 
 <script setup lang="ts">
-import TheMain from '@/layout/TheMain.vue';
+import { RouterView } from 'vue-router';
 </script>
 
 <style scoped></style>

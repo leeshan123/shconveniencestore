@@ -2,5 +2,80 @@
 @import 'tailwindcss';
 
 * {
-  font-family: 'Pretendard', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: 'Pretendard', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css');
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+    --primary: #4285f4;
+    --primary-light: rgba(66, 133, 244, 0.1);
+    --secondary: #fbbc05;
+    --secondary-light: rgba(251, 188, 5, 0.1);
+    --danger: #f92f27;
+    --danger-light: rgba(241, 144, 136, 0.1);
+    --gray-light: #f9fafb;
+    --radius: 1.5rem;
+}
+
+body {
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* Element Plus 커스텀 스타일 */
+.el-button--primary {
+    --el-button-bg-color: var(--primary) !important;
+    --el-button-border-color: var(--primary) !important;
+    --el-button-hover-bg-color: var(--primary) !important;
+    --el-button-hover-border-color: var(--primary) !important;
+}
+
+.el-button--default {
+    border-radius: var(--radius) !important;
+}
+
+.el-card {
+    --el-card-border-radius: var(--radius) !important;
+    box-shadow: 0 10px 15px -3px rgba(44, 44, 44, 0.1), 0 4px 6px -2px rgba(50, 50, 50, 0.05) !important;
+}
+
+.bg-primary-light {
+    background-color: var(--primary-light) !important;
+}
+
+.bg-secondary-light {
+    background-color: var(--secondary-light) !important;
+}
+
+.bg-danger-light {
+    background-color: var(--danger-light) !important;
+}
+
+.bg-gray-light {
+    background-color: var(--gray-light) !important;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.text-secondary {
+    color: var(--secondary) !important;
+}
+
+.text-danger {
+    color: var(--danger) !important;
+}
+
+/* 체크박스 커스텀 스타일 */
+.el-checkbox__input.is-checked .el-checkbox__inner {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+.el-checkbox__input.is-checked + .el-checkbox__label {
+    color: var(--primary) !important;
 }
