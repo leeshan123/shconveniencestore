@@ -29,6 +29,29 @@
           </ul>
         </div>
       </div>
+      <el-divider>
+        <span class="text-gray-400">간편 로그인</span>
+      </el-divider>
+      <div class="flex gap-3">
+        <div>
+          <a href="/oauth2/authorization/naver" class="icon-naver">
+            <img
+              src="@/assets/icon/user/naver_btnW_아이콘사각.png"
+              alt="네이버 로그인 버튼"
+              width="50px"
+            />
+          </a>
+        </div>
+        <div>
+          <a href="/oauth2/authorization/google" class="icon-google">
+            <img
+              src="@/assets/icon/user/google_web_neutral_sq_na@2x.png"
+              alt="구글 로그인 버튼"
+              width="50px"
+            />
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- <h1>Social Login</h1>
@@ -79,5 +102,12 @@ const checked1 = ref(true);
 /* 체크된 상태의 라벨 색상 */
 ::v-deep(.el-checkbox__input.is-checked + .el-checkbox__label) {
   color: #4285f4; /* 체크되었을 때 라벨 색상 변경 */
+}
+.icon-naver,
+.icon-google {
+  /* hover { */
+  /* box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px; */
+  /* border-radius: 4px; */
+  /* } */
 }
 </style>
