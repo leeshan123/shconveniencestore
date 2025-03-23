@@ -50,7 +50,7 @@
                 <!-- 오른쪽 이미지 및 정보 영역 -->
                 <div class="w-[400px] flex flex-col">
                     <div class="bg-white border rounded-md p-2 mb-4 flex items-center justify-center h-[220px]">
-                        <img src="https://via.placeholder.com/150x200" alt="상품 이미지" class="max-h-full" />
+                        <img src="" alt="상품 이미지" class="max-h-full" />
                     </div>
 
                     <div class="grid grid-cols-1 gap-3">
