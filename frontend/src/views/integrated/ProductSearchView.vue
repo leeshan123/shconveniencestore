@@ -2,8 +2,9 @@
     <div class="flex justify-center items-center min-h-screen bg-white">
         <div class="w-[1024px] h-[auto] bg-gray-50 shadow-lg rounded-lg overflow-hidden flex flex-col p-6">
             <!-- 상단 헤더 영역 -->
-            <div class="bg-[#e94e97] text-white p-3 -mx-6 -mt-6 mb-4">
+            <div class="bg-[#e94e97] text-white p-3 -mx-6 -mt-6 mb-4 flex justify-between items-center">
                 <h1 class="text-2xl font-bold">상품조회</h1>
+                <el-button class="!bg-white !text-[#e94e97]" @click="goBack">뒤로가기</el-button>
             </div>
 
             <div class="flex gap-4 h-full">
@@ -35,7 +36,7 @@
                     <div class="bg-gray-100 p-3 border rounded">
                         <div class="text-lg font-medium mb-2">행사정보</div>
                         <div class="text-sm text-gray-700">
-                            <p>재선당 냉장면 2층 중 1층 구매 시, CJ)</p>
+                            <p>재선당 냉장면 2층 중 1층 구매 시, CJ</p>
                             <p>핫바 2층 중 1층 증정</p>
                             <p>행사기간 : 2022-12-01 ~ 2022-12-31</p>
                             <p>행사요일 : 매일</p>
@@ -104,6 +105,10 @@ const price = ref('2,500');
 const category = ref('14 안주류');
 const eventType1 = ref('023 욱가공품');
 const eventType2 = ref('069 핫바');
+
+const goBack = () => {
+    window.history.back();
+};
 </script>
 
 <style scoped>
