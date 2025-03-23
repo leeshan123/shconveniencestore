@@ -21,13 +21,13 @@
             </div>
 
             <!-- 중간 영역 (통합조회/서비스 버튼과 결제내역) -->
-            <div class="flex gap-4 mb-6">
+            <div class="flex gap-4 mb-10">
                 <!-- 통합조회/서비스 버튼 영역 -->
                 <div class="flex-1 flex flex-col gap-4">
                     <el-button
                         class="h-56 text-xl font-semibold rounded-custom"
                         color="#4285f4"
-                        @click="navigateTo('/integrated')"
+                        @click="$router.push('/integrated-search')"
                     >
                         통합조회
                     </el-button>
@@ -35,15 +35,15 @@
                         class="h-56 text-xl font-semibold rounded-custom ml-0"
                         color="#fbbc05"
                         style="margin-left: 0"
-                        @click="navigateTo('/service')"
+                        @click="$router.push('/service')"
                     >
                         서비스
                     </el-button>
                 </div>
 
                 <!-- 직전 결제내역 -->
-                <div class="flex-1 card p-6">
-                    <div class="flex justify-between items-center mb-4">
+                <div class="flex-1 card pl-6 pr-6">
+                    <div class="flex justify-between items- mb-4">
                         <h2 class="font-bold text-xl">직전 결제내역</h2>
                         <el-button class="rounded-full" color="#4285f4" @click="printReceipt"> 영수증 출력 </el-button>
                     </div>
@@ -70,10 +70,13 @@
                     <p class="text-lg mb-2">금고 보관</p>
                     <p class="action_safe-amount text-[#F92F27] font-bold text-4xl">165,500</p>
                 </div>
-                <el-button class="h-32 text-2xl font-semibold rounded-custom" @click="navigateTo('/waiting')">
+                <el-button class="h-[160px] text-2xl font-semibold rounded-custom" @click="$router.push('/waiting')">
                     대기
                 </el-button>
-                <el-button class="h-32 text-2xl font-semibold rounded-custom" @click="navigateTo('/refund')">
+                <el-button
+                    class="h-[160px] !important text-2xl font-semibold rounded-custom"
+                    @click="$router.push('/refund')"
+                >
                     환불
                 </el-button>
             </div>
