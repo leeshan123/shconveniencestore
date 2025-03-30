@@ -1,0 +1,117 @@
+/* global.css */
+
+/* Element Plus 컴포넌트 커스텀 스타일 */
+.el-button.is-primary {
+    background-color: #4285f4 !important;
+    border-color: #4285f4 !important;
+}
+
+.el-button.is-secondary {
+    background-color: #fbbc05 !important;
+    border-color: #fbbc05 !important;
+}
+
+.el-button.is-danger {
+    background-color: #f92f27 !important;
+    border-color: #f92f27 !important;
+}
+
+/* 체크박스 커스텀 스타일 */
+.el-checkbox__input.is-checked .el-checkbox__inner {
+    background-color: #4285f4 !important;
+    border-color: #4285f4 !important;
+}
+
+.el-checkbox__input.is-checked + .el-checkbox__label {
+    color: #4285f4 !important;
+}
+
+/* Tailwind 유틸리티 클래스 */
+.page-container {
+    @apply flex justify-center py-20;
+}
+
+.content-wrapper {
+    @apply flex flex-col items-center;
+}
+
+.logo-container {
+    @apply mb-10 flex items-center justify-center;
+}
+
+.form-container {
+    @apply flex flex-col items-center gap-2;
+}
+
+.input-standard {
+    @apply w-60 mb-3;
+}
+
+.input-group {
+    @apply flex items-center mb-3;
+}
+
+.input-with-button {
+    @apply w-60 mr-2;
+}
+
+.form-actions {
+    @apply flex items-center justify-between w-full mb-8;
+}
+
+.links-container {
+    @apply flex gap-1;
+}
+
+/* 대시보드 관련 */
+.dashboard-container {
+    @apply w-full max-w-[1024px] h-[768px] bg-gray-100 shadow-lg rounded-lg overflow-hidden flex flex-col p-8;
+}
+
+.stats-container {
+    @apply flex gap-4;
+}
+
+.stat-item-primary {
+    @apply bg-primary-light px-6 py-3 rounded-lg;
+}
+
+.stat-item-secondary {
+    @apply bg-secondary-light px-6 py-3 rounded-lg;
+}
+
+.stat-item-danger {
+    @apply bg-danger-light px-6 py-3 rounded-lg;
+}
+
+.btn-large {
+    @apply h-32 text-2xl font-semibold rounded-custom;
+}
+
+.card-container {
+    @apply flex-1 p-6 bg-white rounded-lg shadow-card;
+}
+
+.card-header {
+    @apply flex justify-between items-center mb-4;
+}
+
+.card-title {
+    @apply font-bold text-xl;
+}
+
+.card-list {
+    @apply space-y-4;
+}
+
+.list-item {
+    @apply flex justify-between items-center border-b pb-2;
+}
+
+.item-label {
+    @apply text-gray-600;
+}
+
+.item-value {
+    @apply font-bold text-xl;
+}

@@ -5,6 +5,7 @@
         <img width="130px" src="@/assets/icon/logo.svg" alt="승환편의점로고" />
       </div>
       <div class="flex flex-col items-center">
+        <div>비번찾기</div>
         <el-input
           v-model="input"
           style="width: 240px"
