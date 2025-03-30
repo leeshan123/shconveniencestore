@@ -6,23 +6,31 @@
       </div>
       <div class="flex flex-col items-center">
         <el-input
-          v-model="input"
+          v-model="idInput"
           style="width: 240px"
           placeholder="아이디"
+          autofocus
           class="mb-3"
         />
         <el-input
-          v-model="input"
+          v-model="pwInput"
           style="width: 240px"
           placeholder="비밀번호"
+          :show-password="true"
           class="mb-6"
         />
         <div class="flex items-center justify-between w-full mb-8">
-          <el-checkbox v-model="checked1" label="아이디 저장" size="large" />
-          <el-button color="#4285F4" type="primary">로그인</el-button>
+          <el-checkbox
+            v-model="isSaveLocal"
+            label="로그인 상태 유지"
+            size="large"
+          />
+          <el-button color="#4285F4" type="primary" @click="login()"
+            >로그인</el-button
+          >
         </div>
         <div>
-          <ul class="flex gap-1">
+          <ul class="flex gap-1 text-gray-500">
             <li><RouterLink to="/signup">회원가입 /</RouterLink></li>
             <li><RouterLink to="/find-id">아이디찾기 /</RouterLink></li>
             <li><RouterLink to="/find-pw">비밀번호 찾기</RouterLink></li>
@@ -53,44 +61,43 @@
         </div>
       </div>
     </div>
-
-    <!-- <h1>Social Login</h1>
-    <br />
-    <a href="/oauth2/authorization/google">
-      <img
-        src="https://pngimage.net/wp-content/uploads/2018/06/google-login-button-png-1.png"
-        alt="google"
-        width="357px"
-        height="117px"
-      />
-    </a>
-    <br />
-    <a href="/oauth2/authorization/facebook">
-      <img
-        src="https://pngimage.net/wp-content/uploads/2018/06/login-with-facebook-button-png-transparent-1.png"
-        alt="facebook"
-        width="357px"
-        height="117px"
-      />
-    </a>
-    <br />
-
-    <a href="/oauth2/authorization/naver">
-      <img
-        src="https://blogfiles.pstatic.net/MjAyMDA4MDRfMzMg/MDAxNTk2NTEyOTY4MDMx.vhXHCulffijGUnvlaBR2jW4__Lkz8R3ZTaEDcTeNV2gg.Wt_HNl_zktUJUMrYGkVmqJ-PhxKv_s4A7gG1uPKMZaQg.PNG.getinthere/naver_button.png"
-        alt="facebook"
-        width="357px"
-        height="50px"
-      />
-    </a> -->
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-const input = ref('');
+import { useUserStore } from '@/stores/user';
+import { useRouter } from 'vue-router'; // 라우팅 필요 시
+const idInput = ref('admin');
+const pwInput = ref('1234');
+const isSaveLocal = ref(true);
 
-const checked1 = ref(true);
+const store = useUserStore();
+const router = useRouter(); // 라우팅 필요 시
+
+const login = async () => {
+  try {
+    const isSuccess = await store.login({
+      id: idInput.value,
+      pw: pwInput.value,
+      isSaveLocal: isSaveLocal.value,
+    });
+    if (isSuccess) {
+      console.log('Login successful!');
+      // 예: 로그인 성공 후 대시보드로 이동
+      router.push('/');
+    }
+  } catch (error: any) {
+    // store.login에서 throw된 에러를 여기서 잡음
+    console.error('Login failed in component:', error);
+    if (error.status === 404) return alert('axios 잘못된 api요청');
+    // 사용자에게 에러 메시지 표시 (API 응답 메시지 활용 권장)
+    alert(
+      error.response?.data?.message ||
+        '로그인에 실패했습니다. 아이디 또는 비밀번호를 확인해주세요.'
+    );
+  }
+};
 </script>
 
 <style scoped>
